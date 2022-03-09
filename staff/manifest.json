@@ -1,0 +1,25 @@
+{
+  "short_name": "DotEightPlus Admin CBT",
+  "name": "DotEightPlus Admin CBT",
+  "description": "DotEightPlus Admin CBT",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "images/pwa.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "./?v3&utm_source=web_app_manifest",
+  "background_color": "#ff0000",
+  "theme_color": "#ff0000",
+  "color": "#fff",
+  "display": "minimal-ui",
+  "related_applications": [
+    {
+      "platform": "web",
+      "orientation": "portrait",
+      "url": "https://admindemo.dotdemo.com.ng"
+    }
+  ]
+}
