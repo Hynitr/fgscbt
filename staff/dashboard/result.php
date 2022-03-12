@@ -47,10 +47,10 @@ if(isset($_GET['id']) && !isset($_GET['other'])) {
             
           } else {
           ?>
-                        <td><?php echo $row['stud_id']; ?></td>
-                        <td><?php echo $row['names']; ?></td>
-                        <td><?php echo $row['subject']; ?></td>
-                        <td><?php echo $row['score']; ?></td>
+                        <td><?php echo strtoupper($row['stud_id']); ?></td>
+                        <td><?php echo strtoupper($row['names']); ?></td>
+                        <td><?php echo strtoupper($row['subject']); ?></td>
+                        <td><?php echo strtoupper($row['score']); ?></td>
                         </td>
                     </tr>
                     <?php
@@ -125,9 +125,9 @@ $other = $_GET['other'];
             
           } else {
           ?>
-                        <td><?php echo $row['stud_id']; ?></td>
-                        <td><?php echo $row['names']; ?></td>
-                        <td><?php echo $row['score']; ?></td>
+                        <td><?php echo strtoupper($row['stud_id']); ?></td>
+                        <td><?php echo strtoupper($row['names']); ?></td>
+                        <td><?php echo strtoupper($row['score']); ?></td>
                         </td>
                     </tr>
                     <?php
