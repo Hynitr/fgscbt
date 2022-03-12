@@ -37,7 +37,7 @@ $resul = query($ssl);
 confirm($resul);
 if(!$resul) {
 
-    redirect("./submitted");
+    redirect("./instruct?id=$data");
     }
 
 
@@ -132,8 +132,8 @@ confirm($result);
                             <br>
                             <img src="../images/logo.png" style="height: 150px" alt="<?php echo $call['school'] ?>">
                             <br><br>
-                            <p>Full Name.:<strong> <?php echo $sur ?></strong></p>
-                            <p>Your Exam ID.: <strong> <?php echo $e_id?></strong></p>
+                            <p>Full Name.:<strong> <?php echo strtoupper($sur) ?></strong></p>
+                            <p>Your Exam ID.: <strong> <?php echo strtoupper($e_id)?></strong></p>
                             <p style="color: red;"><strong>Don`t refresh this page</strong></p>
 
 
@@ -145,7 +145,7 @@ confirm($result);
 
                             <div class="">
                                 <div class="w3-bar">
-                                    <a href="./submitted"
+                                    <a href="./instruct?id=<?php echo $data; ?>"
                                         class="w3-button w3-white w3-border w3-border-red w3-round-large"
                                         style="text-decoration: none;">Click here to end this exam</a>
                                 </div>
@@ -186,7 +186,7 @@ confirm($result);
 
                 </div>
                 <p align="center">&copy; <?php echo $call['school'] ?> | <span style="color: red;"> <a
-                            style="color: red" target="_blank" href="https://doteightplus.com"> DotEightPlus
+                            style="color: red" target="_blank" href="https://hynitr.com"> Hynitr
                             <?php echo date("Y"); ?></a></span> </p>
             </div>
         </div>
@@ -307,8 +307,8 @@ confirm($result);
         var c = document.getElementById('seconds').innerHTML;
 
 
-        if (a == 00 && b == 01 && c == 00) {
-            document.getElementById('id01').innerHTML = 'Less than 1 minutes remaining';
+        if (a == 00 && b == 03 && c == 00) {
+            document.getElementById('id01').innerHTML = 'Less than 3 minutes remaining';
         } else {
             if (a == 00 && b == 00 && c == 20) {
                 document.getElementById('id01').innerHTML = 'Less than 20 seconds remaining';

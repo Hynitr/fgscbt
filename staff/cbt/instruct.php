@@ -1,5 +1,7 @@
 <?php
 include("../functions/init.php");
+
+
 if(!isset($_GET['id'])) {
   header("location: ./");
 }
@@ -9,6 +11,20 @@ $data = strtoupper($_GET['id']);
 $sql = "SELECT * FROM timer WHERE `subject` = '$data'";
 $rsl = query($sql);
 $row = mysqli_fetch_array($rsl);
+
+if(isset($_SESSION['examid'])) {
+
+    $e_id = $_SESSION['examid'];
+
+    //drop the virtual table
+    $snl = "DROP TABLE `$e_id`";
+    $frd = query($snl);
+    
+    //destroy any set session
+    session_destroy();
+    
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,10 +72,12 @@ $row = mysqli_fetch_array($rsl);
                 <img src="../images/logo.png" alt="<?php echo $call['school'] ?>">
             </span>
 
-            <p style="color: red; font-size: 20px;"><b>READ THE FOLLOWING INSTRUCTIONS CAREFULLY</b></p>
+            <p style="color: red; font-size: 20px;"><b><?php echo $data ?> <br />READ THE FOLLOWING
+                    INSTRUCTIONS
+                    CAREFULLY</b></p>
             <hr>
 
-            <p style="font-size: 15px; float: right;" class="text-info"><b>No. of questions to be
+            <p style="font-size: 15px; float: right;" class="text-info"><b>Number of questions to be
                     attempted.:
                     <?php echo $row['attempt']; ?> Question(s)</b></p>
             <br><br>
@@ -85,7 +103,7 @@ $row = mysqli_fetch_array($rsl);
 
             <br />
             <p align="center">&copy; <?php echo $call['school'] ?> | <span style="color: red;"> <a style="color: red"
-                        target="_blank" href="https://doteightplus.com"> DotEightPlus
+                        target="_blank" href="https://hynitr.com"> Hynitr
                         <?php echo date("Y"); ?></a></span> </p>
         </div>
 

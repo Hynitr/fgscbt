@@ -127,7 +127,7 @@ if(!isset($_SESSION['qn']))
         $snl = "DROP TABLE `$e_id`";
         $frd = query($snl);
         
-        echo '<h1 align=center> You Scored.: '.$perc.'%</h1>';
+        echo '<h1 align=center> You have successfully completed this exam. Click the <b>END EXAM button to exit</b></h1>';
         exit;
     }
 

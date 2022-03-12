@@ -53,7 +53,7 @@ $data = $_GET['id'];
                 $instruct    =  $row_counted['instruct'];
 
               ?>
-                    <h3 class="card-title">Preview Question for <?php echo $data; ?>
+                    <h3 class="card-title">Preview Question for <?php echo strtoupper($data); ?>
 
                     </h3>
                     <?php
@@ -138,7 +138,7 @@ $data = $_GET['id'];
             <!-- general form elements disabled -->
             <div class="card card-warning">
                 <div class="card-header">
-                    <h3 class="card-title">Upload Question for <?php echo $data ?> CBT <span
+                    <h3 class="card-title">Upload Question for <?php echo strtoupper($data) ?> CBT <span
                             id="year"><?php echo date("Y"); ?></span></h3>
                     <div class="card-tools">
                         <button type="button" data-toggle="tooltip" title="Minimize" class="btn btn-tool"

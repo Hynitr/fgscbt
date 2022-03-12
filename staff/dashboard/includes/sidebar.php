@@ -59,7 +59,7 @@ while ($row = mysqli_fetch_row($result)) {
               <li class="nav-item">
                 <a href="./questions?id='.$row[0].'" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>'.$row[0].'<br/></p>
+                  <p>'.strtoupper($row[0]).'<br/></p>
                 </a>
               </li>
             </ul>
@@ -72,7 +72,7 @@ while ($row = mysqli_fetch_row($result)) {
               <li class="nav-item">
                 <a href="./questions?id='.$row[0].'" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>'.$row[0].'<br/></p>
+                  <p>'.strtoupper($row[0]).'<br/></p>
                 </a>
               </li>
             </ul>
