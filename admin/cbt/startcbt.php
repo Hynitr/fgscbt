@@ -67,7 +67,7 @@ $data = $_GET['id'];
                 </div>
 
 
-                <div class="wrap-input100 rs1 validate-input" data-validate="Please input your lastname">
+                <div class="wrap-input100 rs1 validate-input" data-validate="Input a valid access code">
                     <input class="input100" type="password" id="nme" name="nme" placeholder="Input Exam Access Code"
                         required>
                     <span class="focus-input100"></span>

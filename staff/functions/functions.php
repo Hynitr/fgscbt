@@ -249,8 +249,8 @@ confirm($result);
 
 //time allowed
 
-$sqll = "INSERT INTO timer(`subject`, `hour`, `min`, `attempt`, `instruct`)";
-$sqll.= " VALUES('$conc', '$hour', '$minutes', '$quess', '$instruct')";
+$sqll = "INSERT INTO timer(`subject`, `hour`, `min`, `attempt`, `instruct`, `acesscode`)";
+$sqll.= " VALUES('$conc', '$hour', '$minutes', '$quess', '$instruct', 'FOGS')";
 $resullt = query($sqll);	
 confirm($resullt);
 
@@ -759,7 +759,7 @@ if (isset($_POST['sur']) && isset($_POST['nme']) && isset($_POST['sbj'])) {
 		$e_id 		= 	"CBT/".rand(0, 9999);
 
 			
-$det = "SELECT * from `login`";
+$det = "SELECT * from `timer`";
 $resw = query($det);
 $nxt = mysqli_fetch_array($resw);
 $uve = $nxt['acesscode'];

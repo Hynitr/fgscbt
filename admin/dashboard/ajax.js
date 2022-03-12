@@ -447,16 +447,23 @@ $(document).ready(function () {
 
   //update access code
   $("#updateaccess").click(function () {
-    var ascode = $("#ascode").val();
+    var ascode = $("#edaccess").val();
+    var acssbj = $("#acssbj").val();
+
+    if(ascode == null) {
+
+      $(toastr.error("Access code field is empty"));
+    } else {
     $(toastr.error("Loading Please wait..."));
     $.ajax({
       type: "post",
       url: "../functions/init.php",
-      data: { ascode: ascode },
+      data: { ascode: ascode, acssbj: acssbj },
       success: function (data) {
         $(toastr.error(data)).html(data);
       },
     });
+  }
   });
 
   //start cbt

@@ -249,8 +249,8 @@ confirm($result);
 
 //time allowed
 
-$sqll = "INSERT INTO timer(`subject`, `hour`, `min`, `attempt`, `instruct`)";
-$sqll.= " VALUES('$conc', '$hour', '$minutes', '$quess', '$instruct')";
+$sqll = "INSERT INTO timer(`subject`, `hour`, `min`, `attempt`, `instruct`, `acesscode`)";
+$sqll.= " VALUES('$conc', '$hour', '$minutes', '$quess', '$instruct', 'FOGS')";
 $resullt = query($sqll);	
 confirm($resullt);
 
@@ -759,7 +759,7 @@ if (isset($_POST['sur']) && isset($_POST['nme']) && isset($_POST['sbj'])) {
 		$e_id 		= 	"CBT/".rand(0, 9999);
 
 			
-$det = "SELECT * from `login`";
+$det = "SELECT * from `timer`";
 $resw = query($det);
 $nxt = mysqli_fetch_array($resw);
 $uve = $nxt['acesscode'];
@@ -839,20 +839,21 @@ confirm($result);
 
 
 //validate update access code
-if(isset($_POST['ascode'])) {
+if(isset($_POST['ascode']) && isset($_POST['acssbj'])) {
 
 	$ascode = clean($_POST['ascode']);
+	$acssbj = clean($_POST['acssbj']);
 
-	updateaccess($ascode); 
+	updateaccess($ascode, $acssbj); 
 } 
 
 
 //update updatedata
-function updateaccess($ascode) {
+function updateaccess($ascode, $acssbj) {
 
 $nww 	= md5(rand(0,99999999));
 
-$sql = "UPDATE `login` SET `acesscode` = '$ascode'";
+$sql = "UPDATE `timer` SET `acesscode` = '$ascode' WHERE `subject` = '$acssbj'";
 $result = query($sql);
 echo '<script>window.location.href ="./access?id='.$nww.'"</script>';	
 

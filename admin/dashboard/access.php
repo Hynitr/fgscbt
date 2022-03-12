@@ -24,55 +24,127 @@ include("includes/top.php");
     <!-- /.content-header -->
 
 
-    <!-- Main content -->
-    <section class="content">
+    <section id="preview" class="content">
         <!-- right column -->
         <div class="col-md-12">
-            <!-- general form elements disabled -->
-            <div class="card card-warning">
+            <div class="card card-dark">
                 <div class="card-header">
-                    <h3 class="card-title"></h3>
+
+                    <h3 class="card-title">Access Code
+
+                    </h3>
+
+
+                    <div class="card-tools">
+                        <button type="button" id="del" data-toggle="modal" data-target="#modal-edit"
+                            data-toggle="tooltip" title="Edit Access Code" class="btn btn-tool"><i
+                                class="fas fa-pen"></i>
+                        </button>
+                        <button type="button" data-toggle="tooltip" title="Maximize" class="btn btn-tool"
+                            data-card-widget="maximize"><i class="fas fa-expand"></i>
+                        </button>
+                        <button type="button" data-toggle="tooltip" title="Minimize" class="btn btn-tool"
+                            data-card-widget="collapse"><i class="fas fa-minus"></i>
+                        </button>
+                    </div>
                 </div>
-                <?php
-$sql = "SELECT * FROM `login`";
-$result = query($sql);
-$row = mysqli_fetch_array($result);
-  
-          ?>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <h5 for="exampleInputPassword1">Previous Access Code .: &nbsp; <?php echo $row['acesscode'] ?>
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Subject</th>
+                                <th class="text-center">Access Code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                    </h5>
-                    <br />
-                    <form role="form">
+                            <tr>
+                                <?php
+                 
+ $sql = "SELECT * FROM `timer`";
+ $result_set=query($sql);
+ while($row= mysqli_fetch_array($result_set))
+ {
+          ?>
+                                <td><?php echo strtoupper($row['subject']); ?></td>
+                                <td><?php echo $row['acesscode']; ?>
+                                </td>
+                                </td>
+                            </tr>
+                            <?php
+          } 
+          ?>
+                        </tbody>
 
-                        <div class="form-group">
+                    </table>
 
-                            <label for="exampleInputPassword1">Input New Access Code .:</label>
-
-                            <input type="text" placeholder="Previous Access Code: <?php echo $row['acesscode'] ?>"
-                                id="ascode" name="ascode" class="form-control" required>
-
-                        </div>
-
-                        <button type="button" id="updateaccess" class="btn btn-danger btn-outline-light">Update Access
-                            Code</button>
-                        <!-- <button type="button" id="genupdateaccess" class="btn btn-primary btn-outline-light">Generate Access Code</button> -->
-                    </form>
                 </div>
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
-            <!-- general form elements disabled -->
-
         </div>
-        <!--/.col (right) -->
-</div>
-<!-- /.row -->
-</div><!-- /.container-fluid -->
-</section>
-<!-- /.content -->
+    </section>
+
+
+
+    <!---modal edit--->
+    <div class="modal fade" id="modal-edit">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-info">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Access Code
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleInputPassword1">Subject</label>
+                                <select id="correct" class="form-control">
+                                    <?php
+                 
+                 $sql = "SELECT * FROM `timer`";
+                 $result_set=query($sql);
+                 while($row= mysqli_fetch_array($result_set))
+                 {
+                          ?>
+                                    <option id="acssbj"><?php echo strtoupper($row['subject']) ?></option>
+
+                                    <?php
+
+                 }
+                 ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="exampleInputPassword1">Access Code
+                                </label>
+                                <input type="text" placeholder="input new access code" id="edaccess"
+                                    class="form-control" required>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">No! Cancel</button>
+                    <button type="button" id="updateaccess" class="btn btn-outline-light">Update Access Code</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+
 
 
 
