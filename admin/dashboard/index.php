@@ -1,115 +1,121 @@
-<?php 
-include("includes/top.php");
- ?>
+<?php include("../functions/init.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Dashboard</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">CBT</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+<head>
+    <title><?php echo $call['school'] ?></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="theme-color" content="#ffffff">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <link rel="manifest" href="manifest.json">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <span class="contact100-form-symbol">
+                <img src="../images/logo.png" alt="<?php echo $call['school'] ?>">
+            </span>
+
+
+            <form class="contact100-form validate-form flex-sb flex-w">
+                <span class="contact100-form-title">
+                    <?php echo $call['school'] ." ". date("Y") ?>
+                </span>
+
+                <?php
+$sql = "SHOW TABLES";
+$result = query($sql);
+while ($row = mysqli_fetch_row($result)) {
+  if($row[0] == "login" || $row[0] == "timer") {
+    echo '
+    		<span class="contact100-form-title text-danger">
+					No Exam to take 
+				</span>
+
+            ';
+  } else {
+  	?>
+
+                <select id="cbtsbj" class="form-control btn-primary text-center">
+                    <option>Select Subject</option>
+                    <?php
+$sql = "SHOW TABLES";
+$result = query($sql);
+while ($row = mysqli_fetch_row($result)) {
+  if($row[0] == "login" || $row[0] == "timer" || $row[0] == "result") {
+    echo '
+            ';
+  } else {
+          ?>
+                    <option id="cbtsbj"><?php echo strtoupper($row[0]) ?></option>
+                    <?php
+  }
+}
+?>
+                </select>
+                <br /><br /><br />
+                <button type="button" id="startcbt" class="btn btn-dark">Start CBT</button>
+
+            </form>
+            <?php
+		}
+		}
+		?>
+            <br />
+            <p align="center">&copy; <?php echo $call['school'] ?> | <span style="color: red;"> <a style="color: red"
+                        target="_blank" href="https://hynitr.com"> Hynitr
+                        <?php echo date("Y"); ?></a></span> </p>
+        </div>
+
     </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <!-- /.col-md-6 -->
-                <div class="col-lg-6">
+    <div id="dropDownSelect1"></div>
 
-                    <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h5 class="m-0">Upload CBT Questions</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Begin by uploading Computer Based Test questions to be taken by
-                                students</p>
-                            <a href="./upload" class="btn btn-primary">Upload</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col-md-6 -->
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="ajax.js"></script>
+    <!--===============================================================================================-->
 
-                <div class="col-lg-6">
-
-                    <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h5 class="m-0">Delete Subjects</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Delete a subject you don't wish to have anymore. Contact <a
-                                    href="tel: +2348103171902">DotEightInc</a> for details</p>
-                            <a href="./deletesubject" class="btn btn-primary">Delete Subjects</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-6">
-
-                    <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h5 class="m-0">Start CBT</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Get your students/Pupils started by starting the Computer Based Test
-                            </p>
-                            <a href="./selectcbt" class="btn btn-primary">Start CBT</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-
-                    <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h5 class="m-0">Print Result</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">View students/pupils scores and assigned them for printing or save as
-                                PDF to be shared</p>
-                            <a href="./printres" class="btn btn-primary">Print Results</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-
-</div>
-<!-- /.content-wrapper -->
-<?php include("includes/footer.php"); ?>
-
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-</aside>
-<!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
 </body>
 
 </html>

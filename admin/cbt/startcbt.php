@@ -52,16 +52,17 @@ $data = $_GET['id'];
                 <img src="../images/logo.png" alt=" <?php echo $call['school'] ?>">
             </span>
 
-            <form name="cbter" class="contact100-form validate-form flex-sb flex-w">
+            <form autocomplete="off" name="cbter" class="contact100-form validate-form flex-sb flex-w">
                 <span class="contact100-form-title">
-                    <?php echo ucfirst($data); ?> - Computer Based Test
+                    <?php echo strtoupper($data); ?>
                 </span>
 
                 <p style="color: red;">Register your details to get started. Make sure you recheck before clicking next!
                 </p> <br /><br />
 
                 <div class="wrap-input100 rs1 validate-input" data-validate="Please input your first name">
-                    <input class="input100" type="text" id="sur" name="sur" placeholder="Enter your Full Name">
+                    <input class="input100" type="text" id="sur" name="sur" placeholder="Enter your Full Name"
+                        autocomplete="none">
                     <span class="focus-input100"></span>
                 </div>
 
@@ -86,7 +87,7 @@ $data = $_GET['id'];
             </form>
             <br />
             <p align="center">&copy; <?php echo $call['school'] ?> | <span style="color: red;"> <a style="color: red"
-                        target="_blank" href="https://doteightplus.com"> DotEightPlus
+                        target="_blank" href="https://hynitr.com"> Hynitr
                         <?php echo date("Y"); ?></a></span> </p>
         </div>
 
