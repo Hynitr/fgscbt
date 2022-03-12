@@ -571,6 +571,38 @@ confirm($result);
 
 
 
+//edit questionaire process category
+$errors = [];
+
+if(isset($_POST['edsn']) && isset($_POST['edques']) && isset($_POST['edoa']) && isset($_POST['edob']) && isset($_POST['edoc']) && isset($_POST['edod']) && isset($_POST['edoption']) && isset($_POST['edsubj']) && isset($_POST['edid'])) {
+
+	//assign variables
+
+	$sn 		= $_POST['edsn'];
+	$edques 	= $_POST['edques'];
+	$edoa 		= $_POST['edoa'];
+	$edob 		= $_POST['edob'];
+	$edoc 		= $_POST['edoc'];
+	$edod 		= $_POST['edod'];
+	$edcor 		= $_POST['edoption'];
+	$subj   	= $_POST['edsubj'];
+	$edid       = $_POST['edid'];
+
+//check if question serial number exist
+
+			$sql = "UPDATE `$subj` SET `question` = '$edques',`oa` = '$edoa', `ob` = '$edob', `oc` = '$edoc', `od` = '$edod',`correct` = '$edcor' WHERE `id` = '$edid'";
+			$result = query($sql);
+			confirm($result);
+
+			$_SESSION['edit'] = 'edited';
+
+			echo "Loading... Please wait";
+			echo '<script>window.location.href ="./questions?id='.$subj.'&quest='.$subj.'"</script>';	
+
+}
+
+
+
 //----------------------///
 
 //delete questions

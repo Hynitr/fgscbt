@@ -106,7 +106,10 @@ $data = $_GET['id'];
  {
           ?>
                                 <td><?php echo $row['sn']; ?></td>
-                                <td><?php echo $row['question']; ?></td>
+                                <td><?php echo $row['question']; ?>
+                                    <a href="./editquestion?sbj=<?php echo $data ?>&id=<?php echo $row['id'] ?>"><small>Edit
+                                            Questions</small></a>
+                                </td>
                                 <td><?php echo $row['correct']; ?></td>
                                 <td><?php echo $row['oa'].", ".$row['ob'].", ".$row['oc'].", ".$row['od']; ?></td>
 
@@ -291,7 +294,7 @@ $data = $_GET['id'];
     <div class="modal-dialog modal-lg">
         <div class="modal-content bg-danger">
             <div class="modal-header">
-                <h4 class="modal-title">Reset <?php echo $data; ?> Question(s)<span id="msg"></span></h4>
+                <h4 class="modal-title">Reset <?php echo strtoupper($data); ?> Question(s)<span id="msg"></span></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
             </div>
@@ -481,6 +484,18 @@ $(function() {
         "info": true,
     });
 });
+</script>
+<script>
+$(function() {
+    // Summernote
+    $('.textarea').summernote({
+
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic']]
+        ]
+    });
+})
 </script>
 </body>
 

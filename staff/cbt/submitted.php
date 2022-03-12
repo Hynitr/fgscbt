@@ -43,7 +43,7 @@ $perc = ($sc/$max) * 100;
 cbtexam();
 
 //save user result on submit
-$sn = "UPDATE `result` SET `score` = '$perc' WHERE stud_id = '$e_id'";
+$sn = "UPDATE `result` SET `score` = '$sc' WHERE stud_id = '$e_id'";
 $fn = query($sn);
 
 

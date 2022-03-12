@@ -76,7 +76,7 @@ while ($row = mysqli_fetch_row($result)) {
             ';
   } else {
           ?>
-                    <option id="cbtsbj"><?php echo $row[0] ?></option>
+                    <option id="cbtsbj"><?php echo strtoupper($row[0]) ?></option>
                     <?php
   }
 }
@@ -92,7 +92,7 @@ while ($row = mysqli_fetch_row($result)) {
 		?>
             <br />
             <p align="center">&copy; <?php echo $call['school'] ?> | <span style="color: red;"> <a style="color: red"
-                        target="_blank" href="https://doteightplus.com"> DotEightPlus
+                        target="_blank" href="https://hynitr.com"> Hynitr
                         <?php echo date("Y"); ?></a></span> </p>
         </div>
 

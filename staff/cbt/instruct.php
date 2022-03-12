@@ -77,9 +77,12 @@ if(isset($_SESSION['examid'])) {
                     CAREFULLY</b></p>
             <hr>
 
-            <p style="font-size: 15px; float: right;" class="text-info"><b>Number of questions to be
-                    attempted.:
+            <p style="font-size: 15px; float: left;" class="text-danger"><b>Questions to be
+                    attempted:
                     <?php echo $row['attempt']; ?> Question(s)</b></p>
+            <br />
+            <p style="font-size: 15px; float: left;" class="text-danger"><b>Duration Given:
+                    <?php echo $row['hour']." Hour(s)". $row['min']." Minute(s)"; ?></b></p>
             <br><br>
 
             <p><?php echo $row['instruct']; ?></p>

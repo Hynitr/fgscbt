@@ -120,14 +120,14 @@ if(!isset($_SESSION['qn']))
         $perc = ($sc/$max) * 100;
 
         //save user result on submit
-        $sn = "UPDATE `result` SET `score` = '$perc' WHERE stud_id = '$e_id'";
+        $sn = "UPDATE `result` SET `score` = '$sc' WHERE stud_id = '$e_id'";
         $fn = query($sn);
 
         //drop the virtual table
         $snl = "DROP TABLE `$e_id`";
         $frd = query($snl);
         
-        echo '<h1 align=center> You Scored.: '.$perc.'%</h1>';
+        echo '<h1 align=center> You have successfully completed this exam. Click the <b>END EXAM button to exit</b></h1>';
         exit;
     }
 

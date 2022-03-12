@@ -298,6 +298,101 @@ $(document).ready(function () {
     });
   });
 
+
+
+  //Validate Edit Questions
+  $("#edQuestionaire").click(function () {
+    var edsn = $("#edsn").val();
+    var edques = $("#edques").val();
+    var edoa = $("#edoa").val();
+    var edob = $("#edob").val();
+    var edoc = $("#edoc").val();
+    var edod = $("#edod").val();
+    var edcorrect = $("#edcorrect").val();
+    var edsubj = $("#edsubj").val();
+    var edid = $("#edid").val();
+
+    if (edcorrect == "Option A") {
+      var edoption = edoa;
+    } else {
+      if (edcorrect == "Option B") {
+        var edoption = edob;
+      } else {
+        if (edcorrect == "Option C") {
+          var edoption = edoc;
+        } else {
+          if (edcorrect == "Option D") {
+            var edoption = edod;
+          }
+        }
+      }
+    }
+
+    //validate form
+    var eda = document.forms["uploadQuestionaire"]["edsn"].value;
+    var edb = document.forms["uploadQuestionaire"]["edques"].value;
+    var edc = document.forms["uploadQuestionaire"]["edoa"].value;
+    var edd = document.forms["uploadQuestionaire"]["edob"].value;
+    var ede = document.forms["uploadQuestionaire"]["edoc"].value;
+    var edf = document.forms["uploadQuestionaire"]["edod"].value;
+    var edg = document.forms["uploadQuestionaire"]["edcorrect"].value;
+
+    if (eda == null || eda == "") {
+      $(toastr.error("Please create a serial number"));
+      return false;
+    } else {
+      if (edb == null || edb == "") {
+        $(toastr.error("Please type in a question"));
+        return false;
+      } else {
+        if (edc == null || edc == "") {
+          $(toastr.error("Please input Option A"));
+          return false;
+        } else {
+          if (edd == null || edd == "") {
+            $(toastr.error("Please input Option B"));
+            return false;
+          } else {
+            if (ede == null || ede == "") {
+              $(toastr.error("Please input Option c"));
+              return false;
+            } else {
+              if (edf == null || edf == "") {
+                $(toastr.error("Please input Option D"));
+                return false;
+              } else {
+                if (edg == null || edg == "") {
+                  $(toastr.error("Please input a correct answer"));
+                  return false;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    //end of form validation
+
+    $.ajax({
+      type: "post",
+      url: "../functions/init.php",
+      data: {
+        edsn: edsn,
+        edques: edques,
+        edoa: edoa,
+        edob: edob,
+        edoc: edoc,
+        edod: edod,
+        edoption: edoption,
+        edsubj: edsubj,
+        edid: edid,
+      },
+      success: function (data) {
+        $(toastr.error(data)).html(data);
+      },
+    });
+  });
+
   //deleting question
   $("#movedel").click(function () {
     var delsn = $("#delsn").val();
