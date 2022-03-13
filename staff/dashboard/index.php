@@ -42,21 +42,7 @@ include("includes/top.php");
                 </div>
                 <!-- /.col-md-6 -->
 
-                <div class="col-lg-6">
-
-                    <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h5 class="m-0">Start CBT</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Get your students/Pupils started by starting the Computer Based Test
-                            </p>
-                            <a href="./selectcbt" class="btn btn-primary">Start CBT</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
+                <div class="col-lg-12">
 
                     <div class="card card-primary card-outline">
                         <div class="card-header">

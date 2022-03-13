@@ -156,7 +156,7 @@ $errors = [];
 
 function login_user($user_name, $password) {
 
-$sql = "SELECT `password` FROM `login` WHERE `username` = '".escape($user_name)."'";
+$sql = "SELECT `admpword` FROM `login` WHERE `username` = '".escape($user_name)."'";
 $result = query($sql);
 if(row_count($result) == 1) {
 	$row = mysqli_fetch_array($result);

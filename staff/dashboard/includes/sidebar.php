@@ -86,16 +86,6 @@ mysqli_free_result($result);
                 </li>
                 <br />
                 <li class="nav-item has-treeview">
-                    <a href="./selectcbt" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Start CBT
-                            <i class="right fas fa-angle-right"></i>
-                        </p>
-                    </a>
-                </li>
-                <br />
-                <li class="nav-item has-treeview">
                     <a href="./printres" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
                         <p>

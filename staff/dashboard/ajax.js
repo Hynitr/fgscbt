@@ -396,6 +396,7 @@ $(document).ready(function () {
   //deleting question
   $("#movedel").click(function () {
     var delsn = $("#delsn").val();
+    var sbjasc = $("#sbjasc").val();
     var val = $("#val").val();
 
     //validate form
@@ -404,7 +405,8 @@ $(document).ready(function () {
     if (a == null || a == "") {
       $(toastr.error("Please type in a serial number"));
       return false;
-    }
+    } else {
+      $(toastr.error("Loading... Please Wait"));
     //end of form validation
 
     $.ajax({
@@ -415,6 +417,7 @@ $(document).ready(function () {
         $(toastr.error(data)).html(data);
       },
     });
+  }
   });
 
   //deleting subject
