@@ -39,7 +39,7 @@ include("includes/top.php");
                         <div class="form-group">
                             <label for="exampleInputPassword1">Select a Category .:</label>
                             <select id="category" class="form-control">
-                                <option id="category">Basic School</option>
+                                <option id="category">Grade Classes</option>
                                 <option id="category">Junior Secondary School</option>
                                 <option id="category">Senior Secondary School</option>
                                 <option id="category">Online Examination</option>
@@ -87,7 +87,7 @@ include("includes/top.php");
     <div class="modal-dialog modal-lg">
         <div class="modal-content bg-info">
             <div class="modal-header">
-                <h4 class="modal-title">Create a CBT <?php echo date("Y"); ?> class and subject for Basic School</h4>
+                <h4 class="modal-title">Create a CBT <?php echo date("Y"); ?> class and subject for Grade Classes</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
             </div>
