@@ -161,7 +161,7 @@ $result = query($sql);
 if(row_count($result) == 1) {
 	$row = mysqli_fetch_array($result);
 
-	$user_password = $row['password'];
+	$user_password = $row['admpword'];
 
 	if($password == $user_password) {
 		$_SESSION['cbt'] = $user_name;
