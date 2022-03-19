@@ -580,12 +580,12 @@ if(isset($_POST['edsn']) && isset($_POST['edques']) && isset($_POST['edoa']) && 
 
 	$sn 		= $_POST['edsn'];
 	$edques 	= escape($_POST['edques']);
-	$edoa 		= escape($_POST['edoa'];
-	$edob 		= escape($_POST['edob'];
-	$edoc 		= escape($_POST['edoc'];
-	$edod 		= escape($_POST['edod'];
-	$edcor 		= escape($_POST['edoption'];
-	$subj   	= escape($_POST['edsubj'];
+	$edoa 		= escape($_POST['edoa']);
+	$edob 		= escape($_POST['edob']);
+	$edoc 		= escape($_POST['edoc']);
+	$edod 		= escape($_POST['edod']);
+	$edcor 		= escape($_POST['edoption']);
+	$subj   	= escape($_POST['edsubj']);
 	$edid       = $_POST['edid'];
 
 //check if question serial number exist
