@@ -516,15 +516,17 @@ if(isset($_POST['sn']) && isset($_POST['ques']) && isset($_POST['oa']) && isset(
 
 	//assign variables
 
+	
 	$sn 		= $_POST['sn'];
-	$ques 		= $_POST['ques'];
-	$oa 		= $_POST['oa'];
-	$ob 		= $_POST['ob'];
-	$oc 		= $_POST['oc'];
-	$od 		= $_POST['od'];
-	$cor 		= $_POST['option'];
-	$subj 		= $_POST['subj'];
+	$ques 		= escape($_POST['ques']);
+	$oa 		= escape($_POST['oa']);
+	$ob 		= escape($_POST['ob']);
+	$oc 		= escape($_POST['oc']);
+	$od 		= escape($_POST['od']);
+	$cor 		= escape($_POST['option']);
+	$subj 		= escape($_POST['subj']);
 
+	
 //check if question serial number exist
 
 	if(sn_exist($sn, $subj)) {
@@ -579,13 +581,13 @@ if(isset($_POST['edsn']) && isset($_POST['edques']) && isset($_POST['edoa']) && 
 	//assign variables
 
 	$sn 		= $_POST['edsn'];
-	$edques 	= $_POST['edques'];
-	$edoa 		= $_POST['edoa'];
-	$edob 		= $_POST['edob'];
-	$edoc 		= $_POST['edoc'];
-	$edod 		= $_POST['edod'];
-	$edcor 		= $_POST['edoption'];
-	$subj   	= $_POST['edsubj'];
+	$edques 	= escape($_POST['edques']);
+	$edoa 		= escape($_POST['edoa'];
+	$edob 		= escape($_POST['edob'];
+	$edoc 		= escape($_POST['edoc'];
+	$edod 		= escape($_POST['edod'];
+	$edcor 		= escape($_POST['edoption'];
+	$subj   	= escape($_POST['edsubj'];
 	$edid       = $_POST['edid'];
 
 //check if question serial number exist

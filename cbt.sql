@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2021 at 03:56 AM
+-- Generation Time: Mar 15, 2022 at 03:05 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,118 +24,46 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `basic one_mock exam`
+-- Table structure for table `jss 1_history`
 --
 
-CREATE TABLE `basic one_mock exam` (
+CREATE TABLE `jss 1_history` (
   `id` int(255) NOT NULL,
-  `sn` tinytext DEFAULT NULL,
-  `question` tinytext DEFAULT NULL,
-  `oa` tinytext DEFAULT NULL,
-  `ob` tinytext DEFAULT NULL,
-  `oc` tinytext DEFAULT NULL,
-  `od` tinytext DEFAULT NULL,
-  `correct` tinytext DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `sn` text DEFAULT NULL,
+  `question` text DEFAULT NULL,
+  `oa` text DEFAULT NULL,
+  `ob` text DEFAULT NULL,
+  `oc` text DEFAULT NULL,
+  `od` text DEFAULT NULL,
+  `correct` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `basic one_mock exam`
+-- Dumping data for table `jss 1_history`
 --
 
-INSERT INTO `basic one_mock exam` (`id`, `sn`, `question`, `oa`, `ob`, `oc`, `od`, `correct`) VALUES
-(1, '1', 'The boy must apologise _____ the lady', 'For ', 'At', 'To', 'By', 'To'),
-(2, '2', 'The man is an authority_____ flowers', 'By', 'Of ', 'Over ', 'Against', 'Over '),
-(3, '3', 'The mother was proud ______ her sons success', 'Of ', 'On ', 'For ', 'Over', 'Of '),
-(4, '4', 'He placed the bat _____ the wall', 'Against ', 'Over', 'On', 'Near', 'Near'),
-(5, '5', 'It is an exception _____ the rule', 'For ', 'By ', 'To ', 'Of ', 'To '),
-(6, '6', 'My cousin put the book _____ the drawer', 'On', 'Beyond ', 'Along ', 'Unto', 'On'),
-(7, '7', 'That is the boy ______ broke the  Window', 'Whom', 'Who', 'Whose', 'Which', 'Who'),
-(8, '8', 'That is the boy ______ I saw breaking the window ', 'Which', 'Whom', 'Who', 'Whosever', 'Whom'),
-(9, '9', 'Albert died _____ his own hand', 'With ', 'On', 'Of', 'Over', 'With '),
-(10, '10', 'John bought his book ______ one hundred naira', 'At', 'For', 'With', 'On', 'For');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `common entrance exam`
---
-
-CREATE TABLE `common entrance exam` (
-  `id` int(255) NOT NULL,
-  `sn` tinytext DEFAULT NULL,
-  `question` tinytext DEFAULT NULL,
-  `oa` tinytext DEFAULT NULL,
-  `ob` tinytext DEFAULT NULL,
-  `oc` tinytext DEFAULT NULL,
-  `od` tinytext DEFAULT NULL,
-  `correct` tinytext DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `common entrance exam`
---
-
-INSERT INTO `common entrance exam` (`id`, `sn`, `question`, `oa`, `ob`, `oc`, `od`, `correct`) VALUES
-(1, '1', 'Add 17+13', '20', '30', '40', '10', '30'),
-(2, '2', '640&divide;8', '70', '80', '50', '60', '80'),
-(3, '3', '1001&times;13', '1313', '13103', '31101', '1301', '1301'),
-(4, '4', '2835&divide;7', '45', '415', '504', '405', '405'),
-(5, '5', '101-86', '25', '15', '16', '17', '15'),
-(6, '6', '#3.00-#1.75', '#1.25', '#1.75', '#1.50', '#2.00', '#1.25'),
-(7, '7', '2002+101', '2003', '2103', '2130', '3102', '2103'),
-(8, '8', '6045&divide;15', '904', '49', '403', '94', '403'),
-(9, '9', '4.01-2.75', '1.36', '1.26', '2.16', '2.61', '1.26'),
-(10, '10', '1/2+1/3+1/4', '1 1/2', '9/12', '3/4', '1', '1 1/2'),
-(11, '11', 'Find 65% of 140', '68', '81', '91', '101', '91'),
-(12, '12', '3 1/5+2/3 of 1 1/5', '4', '5', '5 1/5', '6 1/15', '4'),
-(13, '13', '1.01+32.2+01', '33.22', '22.33', '22.03', '32.32', '33.22'),
-(14, '14', '3 2/3  1/3&times;1 1/5', '4', '5', '3 4/15', '6', '3 4/15'),
-(15, '15', 'I spent 2/3 of my money and had #10.00 left. How much had I ?', '#30', '#20', '#15', '#5', '#30'),
-(16, '16', 'Simplify 8/5 x 4/7 x 10/16', '8/5', '3/4', '4/7', '1', '4/7'),
-(18, '17', 'If 3/5 = x/35, what is x', '21', '9', '7', '15', '21'),
-(19, '18', 'In 1977 obi was four times his sons age. If his son was 10 years old in 1980 what was obis age in 1982 ?', '23', '26', '45', '33', '33'),
-(20, '19', 'Find the simple interest on #720.00 at 2.5 for 4 years ', '#144', '#72', '#120', '#108', '#72'),
-(21, '20', 'Write 3.0618 correct to 3 decimal places .', '3.62', '.062', '3.062', '3.061', '3.062'),
-(22, '21', 'Expresss 3/5 as a percentage ', '80%', '75%', '50%', '60%', '60%'),
-(23, '22', 'What is the ratio of 36 to 45 ', '4:5', '5:4', '8:9', '3:5', '4:5'),
-(24, '23', 'What are the prime numbers between 3 and 10 ?', '5,7,9', '5,7', '7,9', '3,5,7', '5,7'),
-(25, '24', 'The average of three numbers is 25. Two of them are 45 and 16 respectively. Find the third number ', '30', '14', '18', '25', '14'),
-(26, '25', 'Multiply 2.012 by 0.05 and write the answer correct to 2 significant figure', '0.01 ', '1.01', '0.10', '1.60', '0.10'),
-(27, '26', 'Two of the prime factors of 36 are 2 and 3. Find the other prime factors ', '2,9', '3,4', '2,3', '6,6', '2,3'),
-(28, '27', 'Express 3/13 as a decimal correct to 2 place of decimal', '0.23', '0.32', '.31', '0.26', '0.23'),
-(29, '28', 'A piece of work is done by 12 men in 9 days. How many people can do the work in 12 days ?', '18', '6', '15', '9', '9'),
-(30, '29', 'How many seconds are there in 8 minutes 12 seconds ?', '512 seconds ', '500 seconds', '492 seconds ', '490 seconds', '492 seconds '),
-(31, '30', 'There are 750 students in a college. If 70% of them are girls,how many are boys ?', '225', '310', '490', '525', '525'),
-(32, '31', 'In a village of people infected with HIV in 2001 were 100. In 2004,205 people were infected.find the ratio of those infected in 2002 to those infected in 2004.', '1:5', '2:5', '3:5', '5:1', '2:5'),
-(33, '32', 'Increase 80 by 10%', '8', '10', '80', '88', '8'),
-(34, '33', 'Odiri bought 12 cartons of biscuit for 3000 find the cost of 7 Coltons the', '#250', '#442', '#840', '#1750', '#1750'),
-(35, '34', 'Reduce 36/100 to its lowest term', '3/10', '6/10', '9/20', '9/25', '9/25'),
-(36, '35', 'A man earns #5000 for 10 days work .How should he earn in 14 days, if working at the same rate ', '#12,000', '#10,000', '#7,000', '#700', '#7,000'),
-(37, '36', 'Simplify 2x - x + 4x', '3x', '4x', '5x', '6x', '5x'),
-(38, '37', 'Convert 0.025 to decimal fraction', '1/10', '1/20', '1/30', '1/44', '1/10'),
-(39, '38', 'How many hours and minutes are there between 9.30am and 1.50pm ? ', '2 hours 20 minutes i', '3 hours 20 minutes', '4 hours 20 minutes', '6 hours 20 minutes ', '4 hours 20 minutes'),
-(40, '39', 'Find the value of x in the equation 3x + 1 = x + 9', '1', '2', '3', '4', '4'),
-(41, '40', 'Find the value of t in the equation 3t - 5 = t + 15', '-20', '-10', '5', '10', '5'),
-(42, '41', 'Find the value of x in the equation 5x - 3 = 2x +12', '-5', '0', '5', '10', '5'),
-(43, '42', 'The marks scored in a test by ten pupils are as follows : 15,14,15,13,16,16,16,17,13,16,17 find the modal mark.', '13', '14', '15', '16', '16'),
-(44, '43', 'Which is greater ? ', '-20', '-4', '-3', '0', '0'),
-(45, '44', 'Find the median of this data : 2,3,2,4,5,3,2,6,5', '3', '2', '6', '5', '5'),
-(46, '45', 'A six sided polygon is known as', 'Semi quaver', 'Octagon', 'Hexagon', 'Pentagon', 'Hexagon'),
-(47, '46', 'Find the mean of the data: 10,12,11,10,7,6,7', '7', '8', '9', '10', '9'),
-(48, '47', 'Find the median of the data : 10 , 12, 11, 10 , 7, 6 , 7', '7', '8', '9', '10', '10'),
-(49, '48', 'A shape with many lines of symmetry is ______', 'Square ', 'Triangle ', 'Sphere ', 'Pyramid', 'Pyramid'),
-(50, '49', 'Express the ratio of 12 to 30 in its simplest form', '1:3', '2:5', '3:4', '3:5', '3:5'),
-(51, '50', 'A square has how many lines of symmetry ', '4', '3', '2', '1', '4'),
-(52, '51', 'If 9y - (4y+y) = 24. Find the value of y', '20', '18', '11', '6', '6'),
-(53, '52', 'What is the value of 8% of 1000k ? ', '#80', '#8', '80k', '8k', '80k'),
-(54, '53', 'If x + 35 = 350,find the value of a', '335', '315', '300', '10', '315'),
-(55, '54', 'If 4b = 24 what is b', '20', '15', '6', '4', '6'),
-(56, '55', 'Y x Y x Y = 27 find the value of   Y', '13', '9', '6', '3', '3'),
-(57, '56', 'What is the value of the digit 4 in the number 246,685', '400,000', '40,000', '4,000', '400', '40,000'),
-(58, '57', 'If A= 2,B = 3 and M = 5 what is the value of   AM + A/ M - B', '3', '6', '9', '12', '6'),
-(59, '58', 'Convert 50% to a fraction and multiply the result by 40', '80', '40', '10', '20', '20'),
-(60, '59', 'The value of x that makes 24/x = 8 true is just', '3', '8', '16', '32', '3'),
-(61, '60', 'I buy 7m of clothes costing #136 each how much change do I get from #1000', '#26', '#32', '#48', '#16', '#48');
+INSERT INTO `jss 1_history` (`id`, `sn`, `question`, `oa`, `ob`, `oc`, `od`, `correct`) VALUES
+(1, '1', '<p>History can be defined as what?</p>', 'Any story that is properly told', 'The study of story', 'The study of past events as they relate to man', 'The study of manmade stories.', 'Any story that is properly told'),
+(2, '2', '<p>A narration that is not factual is called;<br></p>', 'Story', 'History', 'Biography', 'True life story', 'Story'),
+(3, '3', '<p>History can be defined as ____</p>', 'Any story that is properly told', 'The study of story', 'The study of past events as they relate to man', 'The study of manmade stories.', 'Herodotus'),
+(4, '4', '<p>A story can be defined as<br></p>', 'any account of an events whether fiction or non-fiction', 'a non-fiction account of an event', 'A fiction account of an account', 'The study of past event as the relate to man', 'any account of an events whether fiction or non-fiction'),
+(5, '5', '<p>A major difference&nbsp; between history and storytelling is that;<br></p>', 'history is funtual, while story telling is non- factual', 'history is factual, while story telling is factual', 'history is fictional, while story telling is none fictional', 'history does not require evidence, while story telling does', 'history is factual, while story telling is factual'),
+(6, '6', '<p>An example of monument is<br></p>', 'bone tool', 'shrine', 'iron tool', 'wooden tool', 'shrine'),
+(7, '7', 'Which of these is an archaeological site in Nigeria?', 'Ibadan', 'Port Harcout', 'Sokoto', 'Darima', 'Port Harcout'),
+(8, '8', '<p>Arewa house Archieves is located in _______<br></p>', 'Lagos', 'Kano', 'Kaduna', 'Benin City', 'Kaduna'),
+(9, '9', '<p>_______ is a set of books that give information on many aspects of a subject<br></p>', 'Encyclopedia', 'biography', 'magazine', 'textbook', 'Encyclopedia'),
+(10, '10', '<p>A short book is known as<br></p>', 'memois', 'mono graph', 'biography', 'textbook', 'mono graph'),
+(11, '11', '<p>Which of the following is not a type of history?<br></p>', 'social history', 'botanical history', 'medical history', 'political history', 'botanical history'),
+(12, '12', '<p>________ are textbooks written by one or more authours<br></p>', 'journal', 'biograhies', 'Authoured book', 'Auto biographies', 'journal'),
+(13, '13', '<p>________ is a collection of peer-reviewed articles<br></p>', 'standard book', 'a textbooks', 'a journal', 'a workbook', 'a journal'),
+(14, '14', '<p>A major type of traditional source of history is<br></p>', 'oral evidence', 'archaelogy', 'texbook', 'journal', 'oral evidence'),
+(15, '15', '<p>A place where a variety of aged materials, especially documents and photographs are stored<br></p>', 'archieve', 'library ', 'material store', 'history story', 'archieve'),
+(16, '16', '<p>The following are correct definitions of ante fact except<br></p>', 'Things made by people of past generations that can tell us something about them ', 'A stone tool, pottery vessels, metal weapons, buttons, jewellery, clothing etc belonging to people that live long time ago', 'object that are created in recent time', 'A tool or a work of act, especially an object or archaeological interest', 'Things made by people of past generations that can tell us something about them '),
+(17, '17', '<p>The following are examples of oral traditions excepts&nbsp;<br></p>', 'memories', 'legends', 'praise songs', 'proverbs', 'memories'),
+(18, '18', '<p>The following are correct definitions of oral traditions except<br></p>', 'textimonies concerning the past transmitted from one generation to another over a period of time', 'documentary evidence transmitted from one person to another', 'unwritten messages, whose presentation is entrusted to the memories of successive generations to people', 'words of mouth transmitted from one person to another over a period of time', 'words of mouth transmitted from one person to another over a period of time'),
+(19, '19', '<p>Which of the following are examples of secondary sources?<br></p>', 'legends, archival materials, text book', 'original autobiographies, travel guides and monograph', ' monograph, textbooks and journal', 'Archival materials, textbooks and journal', ' monograph, textbooks and journal'),
+(20, '20', '<p>Which of the following are categories of historical sources?<br></p>', 'primary, secondary and university sources', 'nursery, primary and secondary sources', 'Primary, secondary and tertiary sources', 'nursery, secondary and tertiary sources', 'Primary, secondary and tertiary sources'),
+(21, '21', '<p>ddnfn</p>', 'dbdb', 'nndn', 'bdd', 'ndnd', 'nndn');
 
 -- --------------------------------------------------------
 
@@ -148,15 +76,15 @@ CREATE TABLE `login` (
   `school` text NOT NULL,
   `username` text NOT NULL,
   `password` text NOT NULL,
-  `acesscode` text NOT NULL
+  `admpword` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`id`, `school`, `username`, `password`, `acesscode`) VALUES
-(1, 'Demo CBT', 'demo', '8f96e4f5fcff936298f13a4b8db8a242', 'demo');
+INSERT INTO `login` (`id`, `school`, `username`, `password`, `admpword`) VALUES
+(1, 'Demo CBT', 'demo', '8f96e4f5fcff936298f13a4b8db8a242', '8f96e4f5fcff936298f13a4b8db8a242');
 
 -- --------------------------------------------------------
 
@@ -186,31 +114,25 @@ CREATE TABLE `timer` (
   `hour` text NOT NULL,
   `min` text NOT NULL,
   `attempt` int(10) NOT NULL,
-  `instruct` text NOT NULL
+  `instruct` text NOT NULL,
+  `acesscode` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `timer`
 --
 
-INSERT INTO `timer` (`id`, `subject`, `hour`, `min`, `attempt`, `instruct`) VALUES
-(75, 'common entrance exam', '1', '0', 50, ''),
-(76, 'basic one_mock exam', '0', '10', 10, '<p>1. Attempt all question</p><p>2. Stay away from any form of examination malpratice</p>');
+INSERT INTO `timer` (`id`, `subject`, `hour`, `min`, `attempt`, `instruct`, `acesscode`) VALUES
+(81, 'jss 1_history', '0', '15', 20, '<p>Attempt all questions</p>', 'few');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `basic one_mock exam`
+-- Indexes for table `jss 1_history`
 --
-ALTER TABLE `basic one_mock exam`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `common entrance exam`
---
-ALTER TABLE `common entrance exam`
+ALTER TABLE `jss 1_history`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -236,16 +158,10 @@ ALTER TABLE `timer`
 --
 
 --
--- AUTO_INCREMENT for table `basic one_mock exam`
+-- AUTO_INCREMENT for table `jss 1_history`
 --
-ALTER TABLE `basic one_mock exam`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `common entrance exam`
---
-ALTER TABLE `common entrance exam`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+ALTER TABLE `jss 1_history`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -257,13 +173,13 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `timer`
 --
 ALTER TABLE `timer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

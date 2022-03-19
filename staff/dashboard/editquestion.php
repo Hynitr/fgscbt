@@ -7,7 +7,7 @@ if(!isset($_GET['id']) && !isset($_GET['sbj'])) {
 $data = $_GET['id'];
 $sbj = $_GET['sbj'];
 
-$sql = "SELECT * from `".$sbj."`";
+$sql = "SELECT * from `$sbj` WHERE `sn` = '$data'";
 $result_set = query($sql);
 $row = mysqli_fetch_array($result_set);
 

@@ -52,12 +52,12 @@ while($row = mysqli_fetch_array($rpsult)) {
 
     //set the result to a variable
     $b = $row['sn'];
-    $c = $row['question'];
-    $d = $row['oa'];
-    $e = $row['ob'];
-    $f = $row['oc'];
-    $g = $row['od'];
-    $h = $row['correct'];
+    $c = escape($row['question']);
+    $d = escape($row['oa']);
+    $e = escape($row['ob']);
+    $f = escape($row['oc']);
+    $g = escape($row['od']);
+    $h = escape($row['correct']);
 
 
 //insert into virtual table
