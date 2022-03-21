@@ -93,7 +93,7 @@ if($cor === $row['od']) {
                         </div>
                         <div class="form-group">
                             <label>Type in a Question.:</label>
-                            <textarea class="textarea form-control" name="det" id="edques"
+                            <textarea class="form-control" name="det" id="edques"
                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
                                 required><?php echo $row['question'] ?></textarea>
                         </div>
@@ -202,6 +202,8 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->
 <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
 <!-- daterangepicker -->
 <script src="plugins/moment/moment.min.js"></script>
 <script src="plugins/daterangepicker/daterangepicker.js"></script>
@@ -212,8 +214,6 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->

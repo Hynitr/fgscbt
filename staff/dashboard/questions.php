@@ -158,7 +158,7 @@ $data = $_GET['id'];
                         </div>
                         <div class="form-group">
                             <label>Type in a Question.:</label>
-                            <textarea class="textarea form-control" name="det" id="ques"
+                            <textarea class="form-control" name="det" id="ques"
                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
                                 required></textarea>
                         </div>
@@ -407,10 +407,10 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
@@ -485,18 +485,7 @@ $(function() {
     });
 });
 </script>
-<script>
-$(function() {
-    // Summernote
-    $('.textarea').summernote({
 
-        toolbar: [
-            // [groupName, [list of button]]
-            ['style', ['bold', 'italic']]
-        ]
-    });
-})
-</script>
 </body>
 
 </html>
