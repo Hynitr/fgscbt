@@ -47,10 +47,14 @@ if(isset($_GET['id']) && !isset($_GET['other'])) {
             
           } else {
           ?>
-                        <td><?php echo strtoupper($row['stud_id']); ?></td>
+                        <td><?php echo strtoupper($row['stud_id']); ?>
+                        </td>
                         <td><?php echo strtoupper($row['names']); ?></td>
                         <td><?php echo strtoupper($row['subject']); ?></td>
-                        <td><?php echo strtoupper($row['score']); ?></td>
+                        <td><?php echo strtoupper($row['score']); ?> &nbsp;&nbsp;&nbsp;
+                            <a href="./delquestion?id=<?php echo $row['stud_id'] ?>"><i class="fas fa-trash"></i></a>
+
+                        </td>
                         </td>
                     </tr>
                     <?php

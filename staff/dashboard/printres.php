@@ -216,3 +216,11 @@ function resResult() {
 </body>
 
 </html>
+
+<!--notification for delete result -->
+<?php
+if(isset($_SESSION['dele'])) {
+  echo "<script>$(toastr.error('Result Deleted Successfully'));</script>";
+}
+
+?>
