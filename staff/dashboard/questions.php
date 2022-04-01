@@ -106,7 +106,7 @@ $data = $_GET['id'];
  {
           ?>
                                 <td><?php echo $row['sn']; ?></td>
-                                <td><?php echo escape(clean($row['question'])); ?>
+                                <td><?php echo $row['question']; ?>
                                     <a href="./editquestion?sbj=<?php echo $data ?>&id=<?php echo $row['id'] ?>"><small>Edit
                                             Questions</small></a>
                                 </td>
