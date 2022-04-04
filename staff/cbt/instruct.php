@@ -6,7 +6,7 @@ if(!isset($_GET['id'])) {
   header("location: ./");
 }
 
-$data = strtoupper($_GET['id']);
+$data = strtolower($_GET['id']);
 
 $sql = "SELECT * FROM timer WHERE `subject` = '$data'";
 $rsl = query($sql);
@@ -72,7 +72,7 @@ if(isset($_SESSION['examid'])) {
                 <img src="../images/logo.png" alt="<?php echo $call['school'] ?>">
             </span>
 
-            <p style="color: red; font-size: 20px;"><b><?php echo $data ?> <br />READ THE FOLLOWING
+            <p style="color: red; font-size: 20px;"><b><?php echo strtoupper($data) ?> <br />READ THE FOLLOWING
                     INSTRUCTIONS
                     CAREFULLY</b></p>
             <hr>

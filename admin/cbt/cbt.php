@@ -19,7 +19,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
   header("location: ./");
 } else {
 
-    //create a table to save the echoed dataset
+//create a table to save the echoed dataset
 $ssl = "CREATE TABLE `".$e_id."`
 (
 id INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
