@@ -50,7 +50,7 @@ $(document).ready(function () {
 
   //cbt isbtruction
   $("#startcbt").click(function () {
-    var cbtsbj = $("#cbtsbj").val();
+    var cbtsbj = $("#cbtsbj").val().toLowerCase();
 
     if (cbtsbj == "Select Subject") {
       alert("Kindly select a Subject");
@@ -61,7 +61,7 @@ $(document).ready(function () {
 
   //cbt start
   $("#rcbtstart").click(function () {
-    var cbbr = $("#cbbr").text();
+    var cbbr = $("#cbbr").text().toLowerCase();
 
     window.location.href = "./startcbt?id=" + cbbr;
   });
