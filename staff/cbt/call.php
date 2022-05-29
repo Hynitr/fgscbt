@@ -113,11 +113,11 @@ if(!isset($_SESSION['qn']))
         $rsd   = query($score);
         $roww  = mysqli_fetch_array($rsd);
 
-        $sc = $roww['scored'];
+        $sc = $roww['scored']."/".$max;
         cbtexam();
         
         //calculate the percentage of user score
-        $perc = ($sc/$max) * 100;
+        //$perc = ($sc/$max) * 100;
 
         //save user result on submit
         $sn = "UPDATE `result` SET `score` = '$sc' WHERE stud_id = '$e_id'";

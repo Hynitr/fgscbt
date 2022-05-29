@@ -9,7 +9,7 @@ if(!isset($data) && !isset($e_id) && !isset($sur)) {
  ?>
 <!DOCTYPE html>
 <html>
-<title>Daglore Model School  | CBT</title>
+<title>Daglore Model School | CBT</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta charset="UTF-8">
@@ -89,7 +89,7 @@ if(!isset($_SESSION['qn']))
               $_SESSION['trueans'] = $_SESSION['trueans']+1;
         }
 
-        $sc = $_SESSION['trueans'];
+        $sc = $_SESSION['trueans']."/".$_SESSION['qn'];
         cbtexam();
         $sn = "UPDATE `result` SET `score` = '$sc' WHERE stud_id = '$e_id'";
         $fn = query($sn);
@@ -105,7 +105,16 @@ if(!isset($_SESSION['qn']))
         mysqli_data_seek($result_set,$_SESSION['qn']);
         $rowed = mysqli_fetch_row($result_set);  
 
-        $sct = $_SESSION['trueans'];
+
+        //get totol number of question atttempted
+        $kjl = "SELECT * FROM timer WHERE `subject` = '$data'";
+        $rkl = query($kjl);
+        $rdw = mysqli_fetch_array($rkl); 
+
+        $mpt = $rdw['attempt'];
+        
+
+        $sct = $_SESSION['trueans']."/".$mpt;
         cbtexam();
         $snt = "UPDATE `result` SET `score` = '$sct' WHERE stud_id = '$e_id'";
         $fnt = query($snt);
