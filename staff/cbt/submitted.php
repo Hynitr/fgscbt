@@ -34,7 +34,7 @@ if(row_count($rsd) == null){
 } else {
 $roww  = mysqli_fetch_array($rsd);
 
-$sc  = $roww['scored'];
+$sc  = $roww['scored']."/".$max;
 
 //calculate the percentage of user score
 $perc = ($sc/$max) * 100;
