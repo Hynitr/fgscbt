@@ -6,24 +6,35 @@ if(!isset($_GET['id'])) {
   header("location: ./");
 }
 
-$data = strtoupper($_GET['id']);
-
-$sql = "SELECT * FROM timer WHERE `subject` = '$data'";
-$rsl = query($sql);
-$row = mysqli_fetch_array($rsl);
-
 if(isset($_SESSION['examid'])) {
 
     $e_id = $_SESSION['examid'];
 
+    //check if this table exit in the database
+    $ssl = "SHOW TABLES";
+    $res = query($sql);
+    while ($row = mysqli_fetch_row($res)) {
+    if($row[0] == "$e_id") {
+        
     //drop the virtual table
     $snl = "DROP TABLE `$e_id`";
     $frd = query($snl);
+    
+    }
+}
     
     //destroy any set session
     session_destroy();
     
 }
+
+
+$data = strtolower($_GET['id']);
+
+$sql = "SELECT * FROM timer WHERE `subject` = '$data'";
+$rsl = query($sql);
+$row = mysqli_fetch_array($rsl);
+
 
 ?>
 <!DOCTYPE html>
