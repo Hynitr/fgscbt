@@ -109,11 +109,18 @@ $row = mysqli_fetch_array($rsl);
 
 
             <p id="cbbr" hidden><?php echo strtolower($data) ?></p> <br />
-            <div class="container-contact100-form-btn">
+            <div class="container-contact100-form-btn row mt-3 mb-4">
+                <a href="./">
+                    <button type="button" class="contact100-form-btn mr-5">
+                        Select another subject
+                    </button>
+                </a>
+
                 <button type="button" id="rcbtstart" name="btn-start" class="contact100-form-btn">
                     START
                 </button>
             </div>
+
 
             <br />
             <p align="center">&copy; <?php echo $call['school'] ?> | <span style="color: red;"> <a style="color: red"
