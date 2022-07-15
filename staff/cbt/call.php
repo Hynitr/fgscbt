@@ -45,17 +45,17 @@ if(!isset($_SESSION['qn']))
      mysqli_data_seek($result_set,$_SESSION['qn']);
      $row = mysqli_fetch_array($result_set); 
       
-     $ansr = $_POST['ans'];
-     $idns = $_POST['usrans'];
+     $ansr = escape($_POST['ans']);
+     $idns = escape($_POST['usrans']);
 
      //save user answer
      $save = "UPDATE `$e_id` SET `userans` = '$ansr' WHERE `id` = '$idns'";
      $svrl = query($save);
      
       
-     if($_POST['ans'] == $row['correct'])
+     if(escape($_POST['ans']) == escape($row['correct']))
      {
-       //scored the user
+      //scored the user
      $save = "UPDATE `$e_id` SET `score` = 1 WHERE `id` = '$idns'";
      $svrl = query($save);
      
@@ -89,10 +89,10 @@ if(!isset($_SESSION['qn']))
         mysqli_data_seek($result_set,$_SESSION['qn']);
         $rower = mysqli_fetch_array($result_set);  
 
-        $ansr = $_POST['ans'];
-        $idns = $_POST['usrans'];
+        $ansr = escape($_POST['ans']);
+        $idns = escape($_POST['usrans']);
 
-        if($_POST['ans'] == $rower['correct'])
+        if(escape($_POST['ans']) == escape($rower['correct']))
         {
           //scored the user
         $save = "UPDATE `$e_id` SET `score` = 1 WHERE `id` = '$idns'";
@@ -162,8 +162,8 @@ if(!isset($_SESSION['qn']))
   
   $_SESSION['cocc']  = 1;
 
-     $ansr = $_POST['ans'];
-     $idns = $_POST['usrans'];
+     $ansr = escape($_POST['ans']);
+     $idns = escape($_POST['usrans']);
 
      //save user answer
      $save = "UPDATE `$e_id` SET `userans` = '$ansr' WHERE `id` = '$idns'";
@@ -178,7 +178,7 @@ if(!isset($_SESSION['qn']))
       
      }***/
 
-     if($_POST['ans'] == $row['correct'])
+     if(ecape($_POST['ans']) == escape($row['correct']))
      {
        //scored the user
      $save = "UPDATE `$e_id` SET `score` = 1 WHERE `id` = '$idns'";
