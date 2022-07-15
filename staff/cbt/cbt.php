@@ -8,6 +8,8 @@ $sl = "SELECT * FROM timer WHERE `subject` = '$data'";
 $rdl = query($sl);
 $rdw = mysqli_fetch_array($rdl);
 
+$max = $rdw['attempt'];
+
 
 //IF HOUR IS NULL SET TO ZZERO
 if($rdw['hour'] == null) {
@@ -63,7 +65,7 @@ if(!$resul) {
 
 
 //display and random values from db
-$spl = "SELECT * FROM  `".$data."` GROUP BY `question` ORDER BY RAND()"; 
+$spl = "SELECT * FROM  `".$data."` ORDER BY RAND()"; 
 $rpsult = query($spl);
 while($row = mysqli_fetch_array($rpsult)) {
     
