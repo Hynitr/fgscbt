@@ -14,7 +14,7 @@ if(isset($_SESSION['examid'])) {
     $ssl = "SHOW TABLES";
     $res = query($sql);
     while ($row = mysqli_fetch_row($res)) {
-    if($row[0] == "$e_id") {
+    if($row[0] == 1) {
         
     //drop the virtual table
     $snl = "DROP TABLE `$e_id`";
@@ -26,7 +26,7 @@ if(isset($_SESSION['examid'])) {
     //destroy any set session
     session_destroy();
     
-}
+} 
 
 
 $data = strtolower($_GET['id']);
@@ -83,7 +83,7 @@ $row = mysqli_fetch_array($rsl);
                 <img src="../images/logo.png" alt="<?php echo $call['school'] ?>">
             </span>
 
-            <p style="color: red; font-size: 20px;"><b><?php echo $data ?> <br />READ THE FOLLOWING
+            <p style="color: red; font-size: 20px;"><b><?php echo strtoupper($data) ?> <br />READ THE FOLLOWING
                     INSTRUCTIONS
                     CAREFULLY</b></p>
             <hr>

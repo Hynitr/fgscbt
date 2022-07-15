@@ -103,7 +103,7 @@ include("includes/top.php");
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="exampleInputPassword1">Subject</label>
-                                <select id="correct" class="form-control">
+                                <select id="acssbj" class="form-control">
                                     <?php
                  
                  $sql = "SELECT * FROM `timer`";

@@ -14,7 +14,7 @@ if(isset($_SESSION['examid'])) {
     $ssl = "SHOW TABLES";
     $res = query($sql);
     while ($row = mysqli_fetch_row($res)) {
-    if($row[0] == "$e_id") {
+    if($row[0] == 1) {
         
     //drop the virtual table
     $snl = "DROP TABLE `$e_id`";
@@ -26,8 +26,7 @@ if(isset($_SESSION['examid'])) {
     //destroy any set session
     session_destroy();
     
-}
-
+} 
 
 $data = strtolower($_GET['id']);
 

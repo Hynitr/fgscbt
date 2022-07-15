@@ -8,8 +8,27 @@ $sl = "SELECT * FROM timer WHERE `subject` = '$data'";
 $rdl = query($sl);
 $rdw = mysqli_fetch_array($rdl);
 
-$a = $rdw['hour'];
-$b = $rdw['min'];
+
+//IF HOUR IS NULL SET TO ZZERO
+if($rdw['hour'] == null) {
+
+    $a = 0;
+
+} else {
+
+    $a = $rdw['hour'];
+}
+
+//if minutes is niot set
+if($rdw['min'] == null) {
+
+    $b = 0;
+
+} else {
+
+    $b = $rdw['min'];
+
+}
 
 //convert hour to minutes
 $a = $a * 60 + $b;

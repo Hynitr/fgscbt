@@ -774,10 +774,26 @@ if ($uve != $nme) {
 
 $sqler = "SELECT * from timer WHERE `subject` = '".$sbj."'";
 $resullt = query($sqler);
-while($row_counted = mysqli_fetch_array($resullt))
-{
-$hr    =  $row_counted['hour'];
-$min   =  $row_counted['min'];
+$row_counted = mysqli_fetch_array($resullt);
+
+//if hour value is not set
+if($row_counted['hour'] == null) {
+
+	$hr = 0;
+}else {
+
+	$hr    =  $row_counted['hour'];
+}
+
+
+//if minute value is not set
+
+if($row_counted['min'] == null) {
+
+	$min = 0;
+}else {
+
+	$min   =  $row_counted['min'];
 }
 
 
