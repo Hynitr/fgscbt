@@ -126,6 +126,8 @@ if(!isset($_SESSION['qn']))
         //drop the virtual table
         $snl = "DROP TABLE `$e_id`";
         $frd = query($snl);
+
+        session_destroy();
         
         echo '<h1 align=center> You have successfully completed this exam. Click the <b>END EXAM button to exit</b></h1>';
         exit;
@@ -178,7 +180,7 @@ if(!isset($_SESSION['qn']))
       
      }***/
 
-     if(ecape($_POST['ans']) == escape($row['correct']))
+     if(escape($_POST['ans']) == escape($row['correct']))
      {
        //scored the user
      $save = "UPDATE `$e_id` SET `score` = 1 WHERE `id` = '$idns'";
