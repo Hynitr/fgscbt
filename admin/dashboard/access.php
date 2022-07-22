@@ -62,7 +62,7 @@ include("includes/top.php");
                             <tr>
                                 <?php
                  
- $sql = "SELECT * FROM `timer`";
+ $sql = "SELECT * FROM `timer` ORDER BY `subject` asc";
  $result_set=query($sql);
  while($row= mysqli_fetch_array($result_set))
  {
@@ -106,7 +106,7 @@ include("includes/top.php");
                                 <select id="acssbj" class="form-control">
                                     <?php
                  
-                 $sql = "SELECT * FROM `timer`";
+                 $sql = "SELECT * FROM `timer` ORDER BY `subject` asc";
                  $result_set=query($sql);
                  while($row= mysqli_fetch_array($result_set))
                  {
